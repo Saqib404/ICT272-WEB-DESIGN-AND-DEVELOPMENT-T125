@@ -1,5 +1,4 @@
 using System;
-using System.Numerics;
 
 namespace TigerSoccerClub
 {
@@ -31,51 +30,48 @@ namespace TigerSoccerClub
             String Jersey = "";
             int initalamt_kids = 150;
             int initalamt_adult = 230;
-
-
-
-
+            
             //these lines of codes are for aligning items to center and contains heading portion
             string s = "*****Welcome to TigerSoccerClub*****";
             Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
             Console.WriteLine(s);
 
             Console.Write("Enter the number of players per registrations: ");
-            int Players = Convert.ToInt32(Console.ReadLine());
+             int Players = Convert.ToInt32(Console.ReadLine());
 
-            if (Players > 4 || Players < 1)
+            if(Players>4 || Players<1)
             {
                 Console.WriteLine("Invalid number, Please enter the registration number betweeen 1 to 4");
             }
             else
             {
-                if (Players == 1)
+                if(Players == 1)
                 {
                     Console.Write("Enter name: ");
                     Name = Console.ReadLine();
 
-                    Console.Write("Registration type: ");
-                    Registration = Console.ReadLine();
+                     Console.Write("Registration type: ");
+                     Registration = Console.ReadLine();
 
                     Console.Write("Enter Yes/No to indicate wheather you want jersey: ");
-                    Jersey = Console.ReadLine();
+                     Jersey = Console.ReadLine();
 
                     if (Registration == "Kids" && Jersey == "Yes")
                     {
-                        total = initalamt_kids + jerseyamt;
+                          total = initalamt_kids + jerseyamt;
                         Console.Write("Total price from " + Name + " is: " + total);
                         Console.WriteLine("\n");
 
                     }
                     else if (Registration == "Kids" && Jersey == "No")
                     {
-                        total = initalamt_kids;
+                         total = initalamt_kids;
                         Console.Write("Total price from " + Name + " is: " + total);
                         Console.WriteLine("\n");
                     }
                     else if (Registration == "Adult" && Jersey == "Yes")
                     {
-                        total = initalamt_adult + jerseyamt;
+                         total = initalamt_adult + jerseyamt;
                         Console.Write("Total price from " + Name + " is: " + total);
                         Console.WriteLine("\n");
                     }
@@ -92,16 +88,10 @@ namespace TigerSoccerClub
                     Console.WriteLine("Name    " + " Type   " + " Jersey   " + " Total ");
                     Console.WriteLine("\n");
 
-                    List<Player> playerList = new List<Player>();
-                    // Add player after registration logic:
-                    playerList.Add(new Player(Name, Registration, Jersey, total));
-
-                    // Display all:
-                    foreach (var p in playerList)
+                    for (int j = 0; j < Players; j++)
                     {
-                        Console.WriteLine($"{p.Name} {p.Registration} {p.Jersey} {p.Total}");
+                        Console.WriteLine(Name + " " + Registration + " " + Jersey + " " + total);
                     }
-
 
 
                 }
@@ -110,13 +100,13 @@ namespace TigerSoccerClub
                     for (i = 0; i < Players; i++)
                     {
                         Console.Write("Enter name: ");
-                        Name = Console.ReadLine();
+                         Name = Console.ReadLine();
 
                         Console.Write("Registration type: ");
-                        Registration = Console.ReadLine();
+                         Registration = Console.ReadLine();
 
                         Console.Write("Enter Yes/No to indicate wheather you want jersey: ");
-                        Jersey = Console.ReadLine();
+                         Jersey = Console.ReadLine();
 
 
                         if (Registration == "Kids" && Jersey == "Yes")
@@ -144,7 +134,7 @@ namespace TigerSoccerClub
                             Console.Write("Total price from " + Name + " is: " + total);
                             Console.WriteLine("\n");
                         }
-                        else
+                        else 
                         {
                             double d1 = initalamt_adult;
                             double d2 = (d1 * 5) / 100;
@@ -152,23 +142,21 @@ namespace TigerSoccerClub
                             Console.Write("Total price from " + Name + " is: " + total);
                             Console.WriteLine("\n");
                         }
-                        string s2 = "Summary of Registrations";
-                        Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
-                        Console.WriteLine(s2);
-                        Console.WriteLine("******************************************************************************************************");
-                        Console.WriteLine("Name    " + " Type   " + " Jersey   " + " Total ");
-                        Console.WriteLine(Name + " " + Registration + " " + " " + " " + Jersey + " " + " " + " " + total);
-                        Console.WriteLine("\n");
+                            string s2 = "Summary of Registrations";
+                            Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                            Console.WriteLine(s2);
+                            Console.WriteLine("******************************************************************************************************");
+                            Console.WriteLine("Name    " + " Type   " + " Jersey   " + " Total ");
+                            Console.WriteLine(Name + " " + Registration + " "+ " " + " " + Jersey + " " + " " + " " + total);
+                            Console.WriteLine("\n");
 
                     }
 
 
                 }
-
+                 
             }
         }
-
+        
     }
 }
-
-
