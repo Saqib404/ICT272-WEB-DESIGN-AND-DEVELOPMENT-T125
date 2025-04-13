@@ -1,0 +1,25 @@
+"Change 2"
+
+
+static double CalculatePrice(string registration, string jersey, int kidFee, int adultFee, int jerseyFee, bool applyDiscount)
+{
+    double basePrice = registration == "Kids" ? kidFee : adultFee;
+    if (jersey == "Yes") basePrice += jerseyFee;
+    if (applyDiscount) basePrice -= basePrice * 0.05;
+    return basePrice;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
