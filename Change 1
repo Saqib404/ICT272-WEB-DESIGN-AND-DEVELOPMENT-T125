@@ -1,0 +1,11 @@
+"Change 1"
+
+List<Player> playerList = new List<Player>();
+// Add player after registration logic:
+playerList.Add(new Player(Name, Registration, Jersey, total));
+
+// Display all:
+foreach (var p in playerList)
+{
+    Console.WriteLine($"{p.Name} {p.Registration} {p.Jersey} {p.Total}");
+}
